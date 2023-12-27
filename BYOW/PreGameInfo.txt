@@ -1,0 +1,4 @@
+Seed: 5678
+last_pos: 51 22
+last_direction: 0
+lighton?: false
