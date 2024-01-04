@@ -40,7 +40,7 @@ public class Input extends JPanel {
     
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawString("Please input two different integers between 0 and 9, both exclusive and press enter after each typing of num.", 5, height / 3);
+        g.drawString("Please input two different integers between 0 (exclusive) and 9 and press enter after each typing of num.", 5, height / 3);
     }
 
 
