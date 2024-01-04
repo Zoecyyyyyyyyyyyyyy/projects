@@ -24,7 +24,7 @@ public class engine {
 
 
 
-    public engine(int width, int height, int num) {
+    public engine(int width, int height, int num, int input1, int input2) {
         this.width = width;
         this.height = height;
         this.num = num;
@@ -32,14 +32,14 @@ public class engine {
         this.s = S;
         this.frame = S.frame;
         this.wholeButtons = S.wholeButtons;
-        this.food = new Food(num, 996 ,666);
+        this.food = new Food(num, input1 ,input2);
         this.me = new Avater(s);
 
         frame.addKeyListener(me);
         frame.setFocusable(true);
         frame.requestFocusInWindow();
 
-        while (true) {
+        Timer timer = new Timer(100, e -> {
             if (!wheFood) {
                 int foodCol = food.addFoodWidth();
                 foodW = foodCol;
@@ -50,20 +50,19 @@ public class engine {
             }
 
             checkEnd();
-            double currentTime = System.currentTimeMillis();
-            if (currentTime - lastUpdateTime > 100) {
-                currentDirection = me.currentDirection;
-                me.move(currentDirection);
-                lastUpdateTime = currentTime;
-            }
+
+            currentDirection = me.currentDirection;
+            me.move(currentDirection);
 
             wheFoodExist();
-        }
+        });
+        timer.start();
     }
 
     public void checkEnd() {
         END = me.END;
         if (END) {
+            System.out.println("AAAAA");
             System.exit(0);
         }
     }

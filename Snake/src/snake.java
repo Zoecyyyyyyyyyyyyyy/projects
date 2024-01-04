@@ -10,8 +10,6 @@ public class snake extends JPanel{
         JFrame frame = new JFrame("Viper Application");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel panel1 = new JPanel();
-
         JPanel panel2 = new JPanel();
         JButton[][] buttonGrid = new JButton[num][num];
         this.wholeButtons = buttonGrid;
